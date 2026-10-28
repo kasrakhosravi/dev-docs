@@ -1,21 +1,22 @@
 ---
 source_path: reference/rpc-providers.mdx
-source_sha: 0bcb154cad29129ccf97fd8624447b0801fb8f95
-title: "RPC 제공업체"
-description: "Stable에서 사용할 수 있는 RPC 제공업체, 시뮬레이션 플랫폼 및 개발자 인프라."
+source_sha: 053330617bc5b1bb9e6ba5b346607d31d991aae0
+title: "RPC 제공자"
+description: "Stable에서 사용 가능한 RPC 제공자, 시뮬레이션 플랫폼 및 개발자 인프라."
 diataxis: "reference"
 ---
 
-# RPC 제공업체
+# RPC 제공자
 
-Stable을 지원하는 RPC 및 개발자 인프라 제공업체입니다.
+Stable을 지원하는 RPC 및 개발자 인프라 제공자.
 
 ## 개요 테이블
 
-| **제공업체** | **카테고리** | **문서 / 시작하기** | **참고** |
+| **제공자** | **카테고리** | **문서 / 시작하기** | **참고** |
 | :--- | :--- | :--- | :--- |
 | [**Alchemy**](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable) | RPC + 개발자 플랫폼 | [Alchemy 시작하기](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable) | RPC, WebSocket, 모니터링, SDK |
-| [**Chainstack**](https://chainstack.com/) | RPC + 노드 인프라 | [Chainstack 시작하기](https://console.chainstack.com/) | 관리형 RPC, WebSocket, 전체 및 아카이브 노드 |
+| [**Chainstack**](https://chainstack.com/) | RPC + 노드 인프라 | [Chainstack 시작하기](https://console.chainstack.com/) | 관리형 RPC, WebSocket, 풀 노드 및 아카이브 노드 |
+| [**PublicNode**](https://publicnode.com) | 무료 공개 RPC | [stable.publicnode.com](https://stable.publicnode.com) | EVM RPC 및 WebSocket, Cosmos RPC, REST 및 gRPC-Web |
 | [**Tenderly**](https://tenderly.co/) | 시뮬레이션 + 디버깅 | [tenderly.co](https://tenderly.co/) | 실시간 시뮬레이션, 트레이싱, 트랜잭션 워크플로우 |
 
 ## Alchemy
@@ -28,7 +29,7 @@ Stable을 지원하는 RPC 및 개발자 인프라 제공업체입니다.
 - 모니터링 대시보드
 - 개발자 API 및 SDK
 
-**시작하기**: [Alchemy 대시보드](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable)에서 Stable 앱을 생성하여 RPC URL을 얻은 다음, 이를 JSON-RPC 엔드포인트로 사용하십시오.
+**시작하기**: [Alchemy 대시보드](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable)에서 Stable 앱을 생성하여 RPC URL을 얻은 다음 JSON-RPC 엔드포인트로 사용합니다.
 
 ## Chainstack
 
@@ -38,9 +39,21 @@ Chainstack은 Stable을 위한 관리형 RPC 노드를 제공합니다. HTTPS �
 
 - 관리형 RPC 노드
 - HTTPS 및 WebSocket 엔드포인트
-- 전체 및 아카이브 노드 액세스
+- 풀 노드 및 아카이브 노드 접근
 
-**시작하기**: [Chainstack 콘솔](https://console.chainstack.com/)에서 프로젝트를 생성하고, Stable을 선택한 다음, 노드를 배포하십시오. 해당 HTTPS 또는 WebSocket 엔드포인트를 애플리케이션에 복사하십시오.
+**시작하기**: [Chainstack 콘솔](https://console.chainstack.com/)에서 프로젝트를 생성하고 Stable을 선택한 다음 노드를 배포합니다. HTTPS 또는 WebSocket 엔드포인트를 애플리케이션에 복사합니다.
+
+## PublicNode
+
+Allnodes의 PublicNode는 계정이 필요 없는 Stable용 무료 공개 RPC 엔드포인트를 제공합니다.
+
+**기능**
+
+- 가입 없이 무료로 사용 가능한 EVM JSON-RPC 및 WebSocket 엔드포인트
+- Cosmos RPC, REST 및 gRPC-Web 엔드포인트
+- [publicnode.com/snapshots](https://www.publicnode.com/snapshots#stable)에서 프루닝된 노드 및 아카이브 노드 스냅샷
+
+**시작하기**: [stable.publicnode.com](https://stable.publicnode.com)에서 엔드포인트를 복사하여 애플리케이션에 붙여넣습니다. 예를 들어 EVM JSON-RPC의 경우 `https://stable-evm-rpc.publicnode.com`을 사용합니다.
 
 ## Tenderly
 
@@ -48,18 +61,18 @@ Chainstack은 Stable을 위한 관리형 RPC 노드를 제공합니다. HTTPS �
 
 **기능**
 
-- 실시간 계약 시뮬레이션
+- 실시간 컨트랙트 시뮬레이션
 - 디버깅 및 트레이싱
 - 개발자를 위한 트랜잭션 워크플로우
 
-**시작하기**: [Tenderly 대시보드](https://tenderly.co/)에서 Stable 프로젝트를 설정하여 계약에 대한 시뮬레이션, 디버깅 및 트랜잭션 트레이싱에 액세스하십시오.
+**시작하기**: [Tenderly 대시보드](https://tenderly.co/)에서 Stable 프로젝트를 설정하여 컨트랙트의 시뮬레이션, 디버깅 및 트랜잭션 트레이싱에 접근합니다.
 
 ---
 
-Stable과 RPC 또는 인프라 통합이 있으십니까? [bizdev@stable.xyz](mailto:bizdev@stable.xyz)로 문의하십시오.
+Stable과의 RPC 또는 인프라 통합이 있으신가요? [bizdev@stable.xyz](mailto:bizdev@stable.xyz)로 연락하시기 바랍니다.
 
-## 다음으로 이동할 곳
+## 다음 단계
 
-- [**Stable에 연결하기**](/ko/reference/connect): Stable 메인넷 또는 테스트넷을 애플리케이션에 추가합니다.
-- [**JSON-RPC API 사용하기**](/ko/reference/json-rpc-api): Stable에서 사용 가능한 RPC 메서드를 찾습니다.
-- [**프로덕션 준비**](/ko/how-to/production-readiness): 출시 전에 RPC 이중화 및 운영 점검을 추가합니다.
+- [**Stable에 연결**](/ko/reference/connect): 애플리케이션에 Stable Mainnet 또는 Testnet을 추가합니다.
+- [**JSON-RPC API 사용**](/ko/reference/json-rpc-api): Stable에서 사용 가능한 RPC 메서드를 확인합니다.
+- [**프로덕션 준비**](/ko/how-to/production-readiness): 출시 전에 RPC 이중화 및 운영 점검 사항을 추가합니다.
