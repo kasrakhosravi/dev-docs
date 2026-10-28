@@ -1,26 +1,27 @@
 ---
 source_path: reference/rpc-providers.mdx
-source_sha: 0bcb154cad29129ccf97fd8624447b0801fb8f95
-title: "RPC 제공업체"
-description: "Stable에서 사용할 수 있는 RPC 제공업체, 시뮬레이션 플랫폼 및 개발자 인프라."
+source_sha: c39ab46c4e06e6fc0409ec4aa79393ada9357cbd
+title: "RPC 공급자"
+description: "Stable에서 사용 가능한 RPC 공급자, 시뮬레이션 플랫폼 및 개발자 인프라."
 diataxis: "reference"
 ---
 
-# RPC 제공업체
+# RPC 공급자
 
-Stable을 지원하는 RPC 및 개발자 인프라 제공업체입니다.
+Stable을 지원하는 RPC 및 개발자 인프라 공급자.
 
-## 개요 테이블
+## 개요 표
 
-| **제공업체** | **카테고리** | **문서 / 시작하기** | **참고** |
+| **공급자** | **카테고리** | **문서 / 시작하기** | **참고** |
 | :--- | :--- | :--- | :--- |
 | [**Alchemy**](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable) | RPC + 개발자 플랫폼 | [Alchemy 시작하기](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable) | RPC, WebSocket, 모니터링, SDK |
 | [**Chainstack**](https://chainstack.com/) | RPC + 노드 인프라 | [Chainstack 시작하기](https://console.chainstack.com/) | 관리형 RPC, WebSocket, 전체 및 아카이브 노드 |
-| [**Tenderly**](https://tenderly.co/) | 시뮬레이션 + 디버깅 | [tenderly.co](https://tenderly.co/) | 실시간 시뮬레이션, 트레이싱, 트랜잭션 워크플로우 |
+| [**Goldsky Edge RPC**](https://docs.goldsky.com/edge-rpc/introduction) | 관리형 RPC | [Edge RPC 빠른 시작](https://docs.goldsky.com/edge-rpc/quickstart) | HTTPS RPC, 캐싱, 사용량 대시보드 |
+| [**Tenderly**](https://tenderly.co/) | 시뮬레이션 + 디버깅 | [tenderly.co](https://tenderly.co/) | 실시간 시뮬레이션, 추적, 트랜잭션 워크플로우 |
 
 ## Alchemy
 
-전 세계적으로 신뢰받는 완전한 블록체인 개발 플랫폼입니다. [Alchemy 시작하기](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable)
+전 세계적으로 신뢰받는 완전한 블록체인 개발 플랫폼. [Alchemy 시작하기](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable)
 
 **기능**
 
@@ -28,7 +29,7 @@ Stable을 지원하는 RPC 및 개발자 인프라 제공업체입니다.
 - 모니터링 대시보드
 - 개발자 API 및 SDK
 
-**시작하기**: [Alchemy 대시보드](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable)에서 Stable 앱을 생성하여 RPC URL을 얻은 다음, 이를 JSON-RPC 엔드포인트로 사용하십시오.
+**시작하기**: [Alchemy 대시보드](https://dashboard.alchemy.com/?utm_source=chain_partner&utm_medium=referral&utm_campaign=stable)에서 Stable 앱을 만들어 RPC URL을 받은 후 JSON-RPC 엔드포인트로 사용하세요.
 
 ## Chainstack
 
@@ -40,26 +41,38 @@ Chainstack은 Stable을 위한 관리형 RPC 노드를 제공합니다. HTTPS �
 - HTTPS 및 WebSocket 엔드포인트
 - 전체 및 아카이브 노드 액세스
 
-**시작하기**: [Chainstack 콘솔](https://console.chainstack.com/)에서 프로젝트를 생성하고, Stable을 선택한 다음, 노드를 배포하십시오. 해당 HTTPS 또는 WebSocket 엔드포인트를 애플리케이션에 복사하십시오.
+**시작하기**: [Chainstack 콘솔](https://console.chainstack.com/)에서 프로젝트를 만들고 Stable을 선택한 후 노드를 배포하세요. HTTPS 또는 WebSocket 엔드포인트를 복사하여 애플리케이션에 붙여 넣으세요.
 
-## Tenderly
+## Goldsky Edge RPC
 
-시뮬레이션, 디버깅, 모니터링 및 실행 도구를 제공하는 풀스택 개발자 플랫폼입니다.
+Goldsky Edge RPC는 여러 지역에서 제공되는 Stable Mainnet 및 Testnet용 관리형 RPC 엔드포인트입니다. [eRPC](https://github.com/erpc/erpc)를 기반으로 구축되었으며, 이는 직접 실행할 수도 있는 오픈 소스 RPC 프록시입니다.
 
 **기능**
 
-- 실시간 계약 시뮬레이션
-- 디버깅 및 트레이싱
+- HTTPS JSON-RPC 엔드포인트 (WebSocket 미지원)
+- 체인 데이터 캐싱
+- 사용량, 지연 시간 및 오류 대시보드
+
+**시작하기**: [Goldsky 대시보드](https://app.goldsky.com)에서 API 키를 만든 후 `https://edge.goldsky.com/standard/evm/988?key=YOUR_KEY`로 JSON-RPC 요청을 보내세요. Testnet의 경우 체인 ID `2201`을 사용하세요.
+
+## Tenderly
+
+시뮬레이션, 디버깅, 모니터링 및 실행 도구를 제공하는 풀스택 개발자 플랫폼.
+
+**기능**
+
+- 실시간 컨트랙트 시뮬레이션
+- 디버깅 및 추적
 - 개발자를 위한 트랜잭션 워크플로우
 
-**시작하기**: [Tenderly 대시보드](https://tenderly.co/)에서 Stable 프로젝트를 설정하여 계약에 대한 시뮬레이션, 디버깅 및 트랜잭션 트레이싱에 액세스하십시오.
+**시작하기**: [Tenderly 대시보드](https://tenderly.co/)에서 Stable 프로젝트를 설정하여 컨트랙트의 시뮬레이션, 디버깅 및 트랜잭션 추적 기능을 활용하세요.
 
 ---
 
-Stable과 RPC 또는 인프라 통합이 있으십니까? [bizdev@stable.xyz](mailto:bizdev@stable.xyz)로 문의하십시오.
+Stable과의 RPC 또는 인프라 통합이 있으신가요? [bizdev@stable.xyz](mailto:bizdev@stable.xyz)로 문의하세요.
 
-## 다음으로 이동할 곳
+## 다음 단계
 
-- [**Stable에 연결하기**](/ko/reference/connect): Stable 메인넷 또는 테스트넷을 애플리케이션에 추가합니다.
-- [**JSON-RPC API 사용하기**](/ko/reference/json-rpc-api): Stable에서 사용 가능한 RPC 메서드를 찾습니다.
-- [**프로덕션 준비**](/ko/how-to/production-readiness): 출시 전에 RPC 이중화 및 운영 점검을 추가합니다.
+- [**Stable에 연결**](/ko/reference/connect): 애플리케이션에 Stable Mainnet 또는 Testnet을 추가하세요.
+- [**JSON-RPC API 사용**](/ko/reference/json-rpc-api): Stable에서 사용 가능한 RPC 메서드를 확인하세요.
+- [**프로덕션 준비**](/ko/how-to/production-readiness): 출시 전에 RPC 이중화 및 운영 점검 사항을 추가하세요.

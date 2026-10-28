@@ -39,8 +39,9 @@ jobs:
           # Blob base for the PR head commit; makes report paths clickable
           # links pinned to the exact reviewed revision.
           STYLE_REPO_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.event.pull_request.head.sha }}
+      # Fork PR tokens are read-only, so only same-repository PRs can post reports.
       - name: Comment styleguide report
-        if: always() && github.event_name == 'pull_request'
+        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/github-script@v7
         with:
           script: |
@@ -59,7 +60,7 @@ jobs:
               await github.rest.issues.createComment({ owner, repo, issue_number, body });
             }
       - name: Suggest fixes inline
-        if: always() && github.event_name == 'pull_request'
+        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/github-script@v7
         with:
           script: |
